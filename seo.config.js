@@ -3,7 +3,7 @@
 // d'environnement NEXT_PUBLIC_SITE_URL sur Vercel/Netlify). Le domaine est utilisé
 // pour l'URL canonique, le sitemap, robots.txt et les balises Open Graph.
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://nhboostbyhamza.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://hamza.nhboost-agency.com"
 ).replace(/\/+$/, "");
 
 export const SITE_NAME = "NHBoost by Hamza";
