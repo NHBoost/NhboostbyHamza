@@ -1,0 +1,80 @@
+"use client";
+// Testimonials.jsx — carrousel de témoignages clients
+
+import React from "react";
+
+const TST = [
+  { result:"De 3-4K€ à +30K€/mois", quote:"Avant, on avait quelques clients mais aucune vraie stabilité. Après la mise en place du système, on a commencé à recevoir des prospects qualifiés régulièrement et à signer beaucoup plus facilement.", name:"Agence partenaire", sub:"Système NHBoost", chip:"+30K€/mois", tag:"acquisition" },
+  { result:"D'1 RDV/semaine à plusieurs/jour", quote:"Avant, on dépendait des recommandations et de la prospection manuelle. Aujourd'hui, notre agenda se remplit avec des prospects qualifiés et on signe de nouveaux clients chaque semaine.", name:"Coach", sub:"Membre NHBoost", chip:"Agenda plein", tag:"rendez-vous" },
+  { result:"Un CA enfin prévisible", quote:"Avant, chaque mois était imprévisible. Aujourd'hui, on a un système d'acquisition clair, des appels réguliers et une vraie visibilité sur notre chiffre d'affaires à venir.", name:"Freelance", sub:"Membre NHBoost", chip:"Prévisible", tag:"prévisibilité" },
+  { result:"Fini de courir après les clients", quote:"Avant, il fallait relancer, prospecter et espérer. Aujourd'hui, le système attire les bonnes personnes, filtre les prospects et nous permet de nous concentrer sur les clients les plus rentables.", name:"Agence", sub:"Membre NHBoost", chip:"Inbound", tag:"clients entrants" },
+];
+
+export function Testimonials(){
+  const [idx, setIdx] = React.useState(0);
+  const perView = useResponsivePerView();
+  const maxIdx = Math.max(0, TST.length - perView);
+  const clamp = (n) => Math.max(0, Math.min(maxIdx, n));
+  const go = (n) => setIdx(clamp(n));
+
+  return (
+    <div className="wrap">
+      <div className="tst-head reveal">
+        <div>
+          <span className="eyebrow">Transformations</span>
+          <h2 className="display">Ce que disent <span className="gold-text kicker-italic">nos clients.</span></h2>
+        </div>
+        <div className="tst-nav">
+          <span className="tst-count">{idx+1} / {maxIdx+1}</span>
+          <button onClick={()=>go(idx-1)} aria-label="Précédent">←</button>
+          <button onClick={()=>go(idx+1)} aria-label="Suivant">→</button>
+        </div>
+      </div>
+
+      <div className="tst-viewport reveal">
+        <div className="tst-track" style={{ transform:`translateX(calc(-${idx} * (320px + 20px)))` }}>
+          {TST.map((t,i)=>(
+            <article className="tst-card" key={i}>
+              <div className="tst-media">
+                <div className="ph-play">▶</div>
+                {t.tag && <span className="label">{t.tag}</span>}
+              </div>
+              <div className="tst-body">
+                <p className="tst-result">↑ {t.result}</p>
+                <p className="tst-quote">“{t.quote}”</p>
+                <div className="tst-foot">
+                  <div className="tst-who">
+                    <div className="nm">{t.name}</div>
+                    <div className="sub">{t.sub}</div>
+                  </div>
+                  <span className="tst-chip">{t.chip}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="tst-dots">
+        {Array.from({length:maxIdx+1}).map((_,i)=>(
+          <span key={i} className={"d " + (i===idx?"on":"")} onClick={()=>go(i)}></span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function useResponsivePerView(){
+  const [n, setN] = React.useState(perViewFor(window.innerWidth));
+  React.useEffect(()=>{
+    const on = () => setN(perViewFor(window.innerWidth));
+    window.addEventListener("resize", on);
+    return () => window.removeEventListener("resize", on);
+  },[]);
+  return n;
+}
+function perViewFor(w){
+  if(w < 560) return 1;
+  if(w < 900) return 2;
+  return 3;
+}
