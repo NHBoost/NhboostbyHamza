@@ -1,14 +1,41 @@
 import "./globals.css";
+import { SITE_URL, SITE_NAME, SEO_TITLE, SEO_DESCRIPTION, KEYWORDS } from "../seo.config";
 
 export const metadata = {
-  title: "NHBoost by Hamza — Appel Stratégique",
-  description:
-    "Découvre comment notre système aide les coachs, freelances et agences à générer des prospects qualifiés tous les jours, signer plus de clients et dépasser la barre des 50 000€/mois.",
+  metadataBase: new URL(SITE_URL),
+  title: SEO_TITLE,
+  description: SEO_DESCRIPTION,
+  keywords: KEYWORDS,
+  applicationName: SITE_NAME,
+  authors: [{ name: "Hamza" }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "/",
+    siteName: SITE_NAME,
+    title: SEO_TITLE,
+    description: SEO_DESCRIPTION,
+    // L'image est fournie automatiquement par app/opengraph-image.js (1200×630)
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SEO_TITLE,
+    description: SEO_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#08080a",
 };
 
 export default function RootLayout({ children }) {
