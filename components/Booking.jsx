@@ -20,12 +20,53 @@ const Check = ({s=14}) => (
   </svg>
 );
 
+// Clé d'accès Web3Forms — publique (conçue pour le client). Chaque soumission
+// est envoyée par e-mail à l'adresse associée à cette clé sur web3forms.com.
+// Surchargée par NEXT_PUBLIC_WEB3FORMS_KEY si défini au build.
+const WEB3FORMS_ACCESS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
+
 export function Booking(){
   const [step, setStep] = React.useState(1);
   const [form, setForm] = React.useState({ phone:"", first:"", last:"" });
   const [touched, setTouched] = React.useState(false);
   const [date, setDate] = React.useState(null);   // day number
   const [slot, setSlot] = React.useState(null);
+  const [submitting, setSubmitting] = React.useState(false);
+  const [error, setError] = React.useState("");
+
+  const submitBooking = async () => {
+    if (!slot || submitting) return;
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: "Nouvelle réservation — Appel Stratégique NHBoost",
+          from_name: "Site NHBoost",
+          "Prénom": form.first,
+          "Nom": form.last,
+          "Téléphone": "+32 " + form.phone,
+          "Date souhaitée": date + " " + MONTH,
+          "Créneau": slot + " (GMT+1)",
+          botcheck: "", // honeypot anti-spam Web3Forms
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStep(3);
+      } else {
+        setError(data.message || "L'envoi a échoué. Merci de réessayer.");
+      }
+    } catch (e) {
+      setError("Connexion impossible. Vérifiez votre réseau et réessayez.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   // June 2026 — 1 June 2026 is a Monday. Grid starts Sunday.
   const MONTH = "juin 2026";
@@ -149,9 +190,12 @@ export function Booking(){
                     ))}
                   </div>
                   <button className="continue-btn" style={{marginTop:"20px"}}
-                    onClick={()=>setStep(3)} disabled={!slot}>
-                    Confirmer ma réservation <span className="arw">→</span>
+                    onClick={submitBooking} disabled={!slot || submitting}>
+                    {submitting
+                      ? <>Envoi en cours…</>
+                      : <>Confirmer ma réservation <span className="arw">→</span></>}
                   </button>
+                  {error && <p className="booking-error">{error}</p>}
                 </React.Fragment>
               )}
             </div>
