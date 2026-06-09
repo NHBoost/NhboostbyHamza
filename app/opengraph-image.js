@@ -36,7 +36,7 @@ export default function OpengraphImage() {
             height: 760,
             display: "flex",
             background:
-              "radial-gradient(circle at 50% 50%, rgba(74,108,247,0.45) 0%, rgba(74,108,247,0) 70%)",
+              "radial-gradient(circle at 50% 50%, rgba(63,119,190,0.45) 0%, rgba(63,119,190,0) 70%)",
           }}
         />
 
@@ -72,8 +72,8 @@ export default function OpengraphImage() {
               fontSize: 20,
               fontWeight: 700,
               letterSpacing: 4,
-              color: "#7E9BFF",
-              border: "1px solid rgba(74,108,247,0.45)",
+              color: "#79ADE3",
+              border: "1px solid rgba(63,119,190,0.45)",
               borderRadius: 999,
               padding: "10px 22px",
             }}
@@ -97,7 +97,7 @@ export default function OpengraphImage() {
         {/* Preuves */}
         <div style={{ display: "flex", gap: 56, position: "relative" }}>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "flex", fontWeight: 800, color: "#7E9BFF", fontSize: 38 }}>
+            <div style={{ display: "flex", fontWeight: 800, color: "#79ADE3", fontSize: 38 }}>
               +50K€/mois
             </div>
             <div style={{ display: "flex", color: "#828aa0", fontSize: 22 }}>
@@ -105,7 +105,7 @@ export default function OpengraphImage() {
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "flex", fontWeight: 800, color: "#7E9BFF", fontSize: 38 }}>
+            <div style={{ display: "flex", fontWeight: 800, color: "#79ADE3", fontSize: 38 }}>
               Chaque jour
             </div>
             <div style={{ display: "flex", color: "#828aa0", fontSize: 22 }}>
@@ -113,7 +113,7 @@ export default function OpengraphImage() {
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "flex", fontWeight: 800, color: "#7E9BFF", fontSize: 38 }}>
+            <div style={{ display: "flex", fontWeight: 800, color: "#79ADE3", fontSize: 38 }}>
               0 risque
             </div>
             <div style={{ display: "flex", color: "#828aa0", fontSize: 22 }}>

@@ -78,7 +78,10 @@ function Nav() {
           <a key={href} href={href} className="nav-link">{label}</a>
           )}
         </div>
-        <a href="#top" className="brand nav-brand" onClick={close}>NHBoost<span className="brand-by">by Hamza</span></a>
+        <a href="#top" className="brand nav-brand" onClick={close}>
+          <img src="/assets/nhboost-logo-blanc.png" className="brand-logo" alt="NHBoost" />
+          <span className="brand-by">by Hamza</span>
+        </a>
         <div className="nav-right">
           <a href="#reserver" className="btn nav-cta" onClick={close}>Réserver mon appel <span className="arw">→</span></a>
         </div>
@@ -135,8 +138,9 @@ function Hero({ heroLine }) {
       </div>
 
       <p className="hero-prompt reveal">Le système est mis en place pour toi, avec une <b>garantie de résultat certifiée par NHBoost.</b></p>
-      <div className="reveal" style={{ marginTop: "22px" }}>
-        <a href="#garantie" className="btn">Découvrir le système <span className="arw">→</span></a>
+      <div className="reveal cta-row" style={{ marginTop: "22px" }}>
+        <a href="#reserver" className="btn">Réserver un appel <span className="arw">→</span></a>
+        <a href="#garantie" className="btn btn-ghost">Découvrir le système <span className="arw">→</span></a>
       </div>
 
       <svg className="scroll-cue" width="20" height="34" viewBox="0 0 20 34" fill="none">
@@ -168,9 +172,13 @@ function Bio() {
           <p>À travers NHBoost, il a aussi bâti un réseau de <em>franchises d'agences marketing</em>, où il accompagne des entrepreneurs dans la création complète de leur agence, de leur offre et de leur système d'acquisition.</p>
           <p>Son avantage : il ne parle pas d'acquisition en théorie. Il l'utilise chaque jour pour faire grandir ses propres sociétés, générer des clients et dépasser rapidement leurs plafonds de chiffre d'affaires.</p>
           <div className="bio-stats">
-            <div><div className="n"><span className="gold-text">14</span> ans</div><div className="l">qu'il entreprend</div></div>
+            <div><div className="n"><span className="gold-text">14</span> ans</div><div className="l">quand il a commencé</div></div>
             <div><div className="n"><span className="gold-text">4</span></div><div className="l">sociétés dans son écosystème</div></div>
             <div><div className="n"><span className="gold-text">100+</span></div><div className="l">consultants placés via BHS</div></div>
+            <div><div className="n"><span className="gold-text">1M€</span></div><div className="l">générés avec ce système</div></div>
+          </div>
+          <div className="bio-cta reveal">
+            <a href="#reserver" className="btn">Réserver un appel <span className="arw">→</span></a>
           </div>
         </div>
       </div>
@@ -199,6 +207,9 @@ function Garantie() {
           <div className="gar-chip" key={i}><span className="gar-num">{String(i + 1).padStart(2, '0')}</span>{x}</div>
           )}
         </div>
+      </div>
+      <div className="sec-cta reveal">
+        <a href="#reserver" className="btn">Réserver un appel <span className="arw">→</span></a>
       </div>
     </section>);
 
@@ -260,7 +271,7 @@ function FinalCTA() {
 /* ---------- Tweaks ---------- */
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "direction": "editorial",
-  "gold": ["#7E9BFF", "#3F5FE6", "#1E37A8"],
+  "gold": ["#79ADE3", "#3F77BE", "#232A5E"],
   "glow": 1,
   "heroLine": "5K ET 20K€/MOIS ?"
 } /*EDITMODE-END*/;
@@ -285,7 +296,9 @@ export default function App() {
     s.setProperty("--gold-3", g[2]);
     s.setProperty("--gold-solid", g[1]);
     s.setProperty("--gold-grad", `linear-gradient(135deg, ${g[0]} 0%, ${g[1]} 46%, ${g[2]} 100%)`);
-    s.setProperty("--gold-sheen", `linear-gradient(120deg, ${g[0]} 0%, ${g[1]} 30%, ${g[2]} 55%, ${g[0]} 80%, ${g[1]} 100%)`);
+    // Sheen (marque + titres surlignés) : on garde des bleus clairs (g0/g1) et on
+    // exclut le marine (g2) pour rester lisible sur le fond sombre.
+    s.setProperty("--gold-sheen", `linear-gradient(120deg, ${g[0]} 0%, ${g[1]} 30%, ${g[0]} 55%, ${g[1]} 80%, ${g[0]} 100%)`);
     s.setProperty("--glow", String(t.glow));
   }, [t.gold, t.glow]);
 
@@ -299,10 +312,18 @@ export default function App() {
       <Bio />
       <div className="wrap"><hr className="rule" /></div>
       <BookingSection />
-      <section className="section" id="resultats"><Testimonials /></section>
+      <section className="section" id="resultats">
+        <Testimonials />
+        <div className="wrap sec-cta reveal">
+          <a href="#reserver" className="btn">Réserver un appel <span className="arw">→</span></a>
+        </div>
+      </section>
       <FinalCTA />
       <footer className="footer">
-        <div className="brand">NHBoost<span className="brand-by">by Hamza</span></div>
+        <div className="brand">
+          <img src="/assets/nhboost-logo-blanc.png" className="brand-logo" alt="NHBoost" />
+          <span className="brand-by">by Hamza</span>
+        </div>
         <div className="small">© 2026 NHBoost by Hamza — Tous droits réservés · Mentions légales · Confidentialité</div>
       </footer>
 
@@ -315,10 +336,10 @@ export default function App() {
         <TweakSection label="Couleur" />
         <TweakColor label="Teinte" value={t.gold}
         options={[
-        ["#7E9BFF", "#3F5FE6", "#1E37A8"],
-        ["#6E8BFF", "#2A4FE0", "#16308F"],
-        ["#8FA6FF", "#4A6CF0", "#243F9E"],
-        ["#A0B4FF", "#5B7CFF", "#2E4ECB"]]
+        ["#79ADE3", "#3F77BE", "#232A5E"],
+        ["#6FA8DC", "#3568A8", "#1E2452"],
+        ["#8FBCEA", "#4A86C8", "#2A3270"],
+        ["#7E9BFF", "#3F5FE6", "#1E37A8"]]
         }
         onChange={(v) => setTweak("gold", v)} />
 

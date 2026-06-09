@@ -95,7 +95,7 @@ export function Booking(){
       </div>
 
       <div className="booking-body">
-        <div className="brand">NHBoost</div>
+        <div className="brand"><img src="/assets/nhboost-logo-blanc.png" className="brand-logo" alt="NHBoost" /></div>
 
         {step === 1 && (
           <React.Fragment>
