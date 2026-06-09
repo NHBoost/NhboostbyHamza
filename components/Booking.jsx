@@ -24,7 +24,7 @@ const Check = ({s=14}) => (
 // est envoyée par e-mail à l'adresse associée à cette clé sur web3forms.com.
 // Surchargée par NEXT_PUBLIC_WEB3FORMS_KEY si défini au build.
 const WEB3FORMS_ACCESS_KEY =
-  process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
+  process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "a4c2d3cc-94b8-447e-a051-32647170f4ff";
 
 export function Booking(){
   const [step, setStep] = React.useState(1);
