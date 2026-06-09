@@ -530,7 +530,7 @@ body::after{
 @media (max-width:560px){
   body{ font-size:14px; }
   .field-row{ grid-template-columns:1fr; }
-  .hero{ padding-top:50px; }
+  .hero{ padding-top:80px; }
 }
 
 /* =========================================================
