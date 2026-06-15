@@ -139,7 +139,7 @@ function Hero({ heroLine }) {
         <span className="corner tl"></span><span className="corner tr"></span>
         <span className="corner bl"></span><span className="corner br"></span>
         <video ref={videoRef} className="hero-video" loop playsInline preload="metadata"
-        src="/assets/header-video.mp4"></video>
+        poster="/assets/header-poster.png" src="/assets/header-video.mp4"></video>
         {!playing &&
         <div className="play">
           <svg width="26" height="28" viewBox="0 0 26 28"><path d="M2 2l22 12L2 26z" fill="#ffffff" /></svg>
