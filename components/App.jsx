@@ -98,13 +98,20 @@ function Nav() {
 /* ---------- Hero ---------- */
 function Hero({ heroLine }) {
   const videoRef = useRef(null);
-  const [muted, setMuted] = useState(true);
-  const toggleSound = () => {
+  const [playing, setPlaying] = useState(false);
+  const togglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
-    v.muted = !v.muted;
-    setMuted(v.muted);
-    if (v.paused) v.play().catch(() => {});
+    if (v.paused) {
+      v.muted = false;
+      const p = v.play();
+      // Si la lecture avec son est bloquée par le navigateur, on relance en muet.
+      if (p && p.catch) p.catch(() => { v.muted = true; v.play().catch(() => {}); });
+      setPlaying(true);
+    } else {
+      v.pause();
+      setPlaying(false);
+    }
   };
   return (
     <header className="hero wrap" id="top">
@@ -116,17 +123,17 @@ function Hero({ heroLine }) {
       </h1>
       <p className="lede reveal">Découvre comment notre système aide les coachs, freelances et agences à générer des prospects qualifiés tous les jours, signer plus de clients et dépasser la barre des 50 000€/mois.</p>
 
-      <div className="video-frame reveal" onClick={toggleSound}>
+      <div className="video-frame reveal" onClick={togglePlay}>
         <span className="corner tl"></span><span className="corner tr"></span>
         <span className="corner bl"></span><span className="corner br"></span>
-        <video ref={videoRef} className="hero-video" autoPlay muted loop playsInline preload="auto"
+        <video ref={videoRef} className="hero-video" loop playsInline preload="metadata"
         src="/assets/header-video.mp4"></video>
-        <div className={"play" + (muted ? "" : " is-playing")}>
-          {muted ?
-          <svg width="26" height="28" viewBox="0 0 26 28"><path d="M2 2l22 12L2 26z" fill="#ffffff" /></svg> :
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="#ffffff" /><path d="M17 9.5a3 3 0 010 5M19.5 7a6 6 0 010 10" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" /></svg>}
+        {!playing &&
+        <div className="play">
+          <svg width="26" height="28" viewBox="0 0 26 28"><path d="M2 2l22 12L2 26z" fill="#ffffff" /></svg>
         </div>
-        <div className="video-cap">{muted ? "Cliquez pour activer le son" : "Son activé — cliquez pour couper"}</div>
+        }
+        {!playing && <div className="video-cap">Cliquez pour lancer la vidéo</div>}
       </div>
 
       <div className="hero-proof reveal">
