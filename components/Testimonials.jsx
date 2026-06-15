@@ -4,10 +4,10 @@
 import React from "react";
 
 const TST = [
-  { result:"De 3-4K€ à +30K€/mois", quote:"Avant, on avait quelques clients mais aucune vraie stabilité. Après la mise en place du système, on a commencé à recevoir des prospects qualifiés régulièrement et à signer beaucoup plus facilement.", name:"Agence partenaire", sub:"Système NHBoost", chip:"+30K€/mois", tag:"acquisition" },
-  { result:"D'1 RDV/semaine à plusieurs/jour", quote:"Avant, on dépendait des recommandations et de la prospection manuelle. Aujourd'hui, notre agenda se remplit avec des prospects qualifiés et on signe de nouveaux clients chaque semaine.", name:"Coach", sub:"Membre NHBoost", chip:"Agenda plein", tag:"rendez-vous" },
-  { result:"Un CA enfin prévisible", quote:"Avant, chaque mois était imprévisible. Aujourd'hui, on a un système d'acquisition clair, des appels réguliers et une vraie visibilité sur notre chiffre d'affaires à venir.", name:"Freelance", sub:"Membre NHBoost", chip:"Prévisible", tag:"prévisibilité" },
-  { result:"Fini de courir après les clients", quote:"Avant, il fallait relancer, prospecter et espérer. Aujourd'hui, le système attire les bonnes personnes, filtre les prospects et nous permet de nous concentrer sur les clients les plus rentables.", name:"Agence", sub:"Membre NHBoost", chip:"Inbound", tag:"clients entrants" },
+  { video:"/assets/testimonial-1.mp4", result:"De 3-4K€ à +30K€/mois", quote:"Avant, on avait quelques clients mais aucune vraie stabilité. Après la mise en place du système, on a commencé à recevoir des prospects qualifiés régulièrement et à signer beaucoup plus facilement.", name:"Agence partenaire", sub:"Système NHBoost", chip:"+30K€/mois", tag:"acquisition" },
+  { video:"/assets/testimonial-2.mp4", result:"D'1 RDV/semaine à plusieurs/jour", quote:"Avant, on dépendait des recommandations et de la prospection manuelle. Aujourd'hui, notre agenda se remplit avec des prospects qualifiés et on signe de nouveaux clients chaque semaine.", name:"Coach", sub:"Membre NHBoost", chip:"Agenda plein", tag:"rendez-vous" },
+  { video:"/assets/testimonial-3.mp4", result:"Un CA enfin prévisible", quote:"Avant, chaque mois était imprévisible. Aujourd'hui, on a un système d'acquisition clair, des appels réguliers et une vraie visibilité sur notre chiffre d'affaires à venir.", name:"Freelance", sub:"Membre NHBoost", chip:"Prévisible", tag:"prévisibilité" },
+  { video:"/assets/testimonial-4.mp4", result:"Fini de courir après les clients", quote:"Avant, il fallait relancer, prospecter et espérer. Aujourd'hui, le système attire les bonnes personnes, filtre les prospects et nous permet de nous concentrer sur les clients les plus rentables.", name:"Agence", sub:"Membre NHBoost", chip:"Inbound", tag:"clients entrants" },
 ];
 
 export function Testimonials(){
@@ -34,23 +34,7 @@ export function Testimonials(){
       <div className="tst-viewport reveal">
         <div className="tst-track" style={{ transform:`translateX(calc(-${idx} * (320px + 20px)))` }}>
           {TST.map((t,i)=>(
-            <article className="tst-card" key={i}>
-              <div className="tst-media">
-                <div className="ph-play">▶</div>
-                {t.tag && <span className="label">{t.tag}</span>}
-              </div>
-              <div className="tst-body">
-                <p className="tst-result">↑ {t.result}</p>
-                <p className="tst-quote">“{t.quote}”</p>
-                <div className="tst-foot">
-                  <div className="tst-who">
-                    <div className="nm">{t.name}</div>
-                    <div className="sub">{t.sub}</div>
-                  </div>
-                  <span className="tst-chip">{t.chip}</span>
-                </div>
-              </div>
-            </article>
+            <TstCard t={t} key={i} />
           ))}
         </div>
       </div>
@@ -61,6 +45,44 @@ export function Testimonials(){
         ))}
       </div>
     </div>
+  );
+}
+
+function TstCard({ t }){
+  const ref = React.useRef(null);
+  const [playing, setPlaying] = React.useState(false);
+  const toggle = () => {
+    const v = ref.current;
+    if (!v) return;
+    if (v.paused) {
+      v.muted = false;
+      const p = v.play();
+      if (p && p.catch) p.catch(() => { v.muted = true; v.play().catch(() => {}); });
+      setPlaying(true);
+    } else {
+      v.pause();
+      setPlaying(false);
+    }
+  };
+  return (
+    <article className="tst-card">
+      <div className="tst-media" onClick={toggle}>
+        <video ref={ref} className="tst-video" loop playsInline preload="metadata" src={t.video}></video>
+        {!playing && <div className="ph-play">▶</div>}
+        {!playing && t.tag && <span className="label">{t.tag}</span>}
+      </div>
+      <div className="tst-body">
+        <p className="tst-result">↑ {t.result}</p>
+        <p className="tst-quote">“{t.quote}”</p>
+        <div className="tst-foot">
+          <div className="tst-who">
+            <div className="nm">{t.name}</div>
+            <div className="sub">{t.sub}</div>
+          </div>
+          <span className="tst-chip">{t.chip}</span>
+        </div>
+      </div>
+    </article>
   );
 }
 
