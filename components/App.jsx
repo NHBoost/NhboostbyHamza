@@ -159,6 +159,8 @@ function Hero({ heroLine }) {
         <div className="hp"><span className="hp-n gold-text">Chaque jour</span><span className="hp-l">des prospects qualifiés dans ton agenda</span></div>
         <span className="hp-div"></span>
         <div className="hp"><span className="hp-n gold-text">0 risque</span><span className="hp-l">garantie de résultat encadrée par NHBoost</span></div>
+        <span className="hp-div"></span>
+        <div className="hp"><span className="hp-n gold-text">+1M€</span><span className="hp-l">généré avec ce système</span></div>
       </div>
 
       <p className="hero-prompt reveal">Le système est mis en place pour toi, avec une <b>garantie de résultat certifiée par NHBoost.</b></p>
