@@ -120,7 +120,7 @@ function Hero({ heroLine }) {
         <span className="corner tl"></span><span className="corner tr"></span>
         <span className="corner bl"></span><span className="corner br"></span>
         <video ref={videoRef} className="hero-video" autoPlay muted loop playsInline preload="auto"
-        src="https://www.pexels.com/fr-fr/download/video/7692789/"></video>
+        src="/assets/header-video.mp4"></video>
         <div className={"play" + (muted ? "" : " is-playing")}>
           {muted ?
           <svg width="26" height="28" viewBox="0 0 26 28"><path d="M2 2l22 12L2 26z" fill="#ffffff" /></svg> :
