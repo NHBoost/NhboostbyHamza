@@ -164,7 +164,10 @@ function Hero({ heroLine }) {
       <p className="hero-prompt reveal">Le système est mis en place pour toi, avec une <b>garantie de résultat certifiée par NHBoost.</b></p>
       <div className="reveal cta-row" style={{ marginTop: "22px" }}>
         <a href="#reserver" className="btn">Réserver un appel <span className="arw">→</span></a>
-        <a href="#garantie" className="btn btn-ghost">Découvrir le système <span className="arw">→</span></a>
+        <a href="https://wa.me/32483095673" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24Zm-3.5 4.43c-.18 0-.46.07-.7.33-.24.26-.92.9-.92 2.2s.94 2.55 1.07 2.73c.13.18 1.85 2.82 4.48 3.95.63.27 1.11.43 1.49.55.63.2 1.2.17 1.65.1.5-.07 1.55-.63 1.77-1.24.22-.61.22-1.13.16-1.24-.07-.11-.24-.18-.5-.31-.26-.13-1.55-.76-1.79-.85-.24-.09-.42-.13-.59.13-.18.26-.68.85-.83 1.02-.15.18-.31.2-.57.07-.26-.13-1.1-.4-2.1-1.29-.78-.69-1.3-1.55-1.45-1.81-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.46.13-.15.18-.26.26-.44.09-.18.04-.33-.02-.46-.07-.13-.59-1.42-.81-1.94-.21-.51-.43-.44-.59-.45h-.5Z" /></svg>
+          Contactez Hamza
+        </a>
       </div>
 
       <svg className="scroll-cue" width="20" height="34" viewBox="0 0 20 34" fill="none">
