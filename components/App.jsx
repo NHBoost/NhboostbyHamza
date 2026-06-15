@@ -166,11 +166,15 @@ function Bio() {
         <div className="reveal">
           <span className="eyebrow">Qui est Hamza</span>
           <h2 className="display">L'HOMME DERRIÈRE <span className="gold-text kicker-italic">NHBoost.</span></h2>
-          <div className="role">Fondateur · Opérateur · Investisseur</div>
-          <p>Hamza entreprend depuis ses <em>14 ans</em> et a lancé sa première société à seulement 19 ans.</p>
-          <p>Aujourd'hui, il ne développe pas une seule activité mais un véritable écosystème d'entreprises : <em>Prestigia</em> (business centers &amp; fiduciaire), <em>Primecast</em> (studio podcast, vidéo &amp; personal branding), <em>BHS</em> (consultance, +100 consultants placés) et <em>NHBoost</em>, son agence spécialisée dans les systèmes d'acquisition publicitaire.</p>
-          <p>À travers NHBoost, il a aussi bâti un réseau de <em>franchises d'agences marketing</em>, où il accompagne des entrepreneurs dans la création complète de leur agence, de leur offre et de leur système d'acquisition.</p>
-          <p>Son avantage : il ne parle pas d'acquisition en théorie. Il l'utilise chaque jour pour faire grandir ses propres sociétés, générer des clients et dépasser rapidement leurs plafonds de chiffre d'affaires.</p>
+          <div className="role">Fondateur · Opérateur · Expert en Acquisition</div>
+          <p>Chaque jour, des milliers d'entreprises investissent dans la publicité, publient du contenu et tentent de développer leur activité sans jamais parvenir à obtenir un flux régulier de clients.</p>
+          <p>La différence entre une entreprise qui stagne et une entreprise qui se développe rapidement ne se trouve généralement ni dans son produit ni dans son service. La différence se trouve dans son <em>système d'acquisition</em>.</p>
+          <p>C'est cette maîtrise de l'acquisition qui permet aujourd'hui à Hamza de <em>garantir contractuellement des résultats</em> aux entreprises qu'il accompagne, là où la plupart des agences se contentent de promesses.</p>
+          <p>Au fil des années, Hamza a construit plusieurs entreprises dans des secteurs différents. <em>Prestigia</em> accompagne les entrepreneurs à travers ses business centers et sa fiduciaire. <em>BHS</em> a permis à des centaines de consultants d'intégrer des entreprises et de contribuer à leur croissance. <em>Primecast</em> aide dirigeants et marques à développer leur visibilité grâce au personal branding, à la vidéo et au podcast.</p>
+          <p>Derrière chacune de ces sociétés se trouve le même moteur : des systèmes d'acquisition performants capables de générer des opportunités commerciales de manière prévisible et répétable.</p>
+          <p>À travers <em>NHBoost</em>, Hamza a développé un réseau d'agences et de franchises qui appliquent ces mêmes méthodes de croissance. Grâce à ces systèmes éprouvés, de nombreuses structures accompagnées dépassent aujourd'hui les <em>50 000€ de chiffre d'affaires mensuel</em>, avec un flux constant de prospects qualifiés et de nouveaux clients.</p>
+          <p>Son expertise ne repose pas sur la théorie, mais sur des systèmes utilisés chaque jour dans ses propres entreprises. Cette expérience lui permet d'identifier rapidement les leviers de croissance d'une société et de mettre en place les mécanismes nécessaires pour attirer davantage de prospects, signer plus de clients et accélérer durablement leur développement.</p>
+          <p>Parce qu'au final, la seule différence entre une entreprise qui peine à se développer et une entreprise qui grandit rapidement est souvent l'accès au bon système et aux bonnes personnes pour l'implémenter. Et c'est précisément la mission d'Hamza à travers NHBoost.</p>
           <div className="bio-stats">
             <div><div className="n"><span className="gold-text">14</span> ans</div><div className="l">quand il a commencé</div></div>
             <div><div className="n"><span className="gold-text">4</span></div><div className="l">sociétés dans son écosystème</div></div>
@@ -193,13 +197,12 @@ function Garantie() {
     <section className="section garantie wrap" id="garantie">
       <div className="sec-head reveal">
         <span className="eyebrow" style={{ justifyContent: "center" }}>La garantie</span>
-        <h2 className="display">UN SYSTÈME MIS EN PLACE POUR TOI, <span className="gold-text kicker-italic">sans risque.</span></h2>
+        <h2 className="display">0 RISQUE. <span className="gold-text kicker-italic">Les résultats sont garantis.</span></h2>
       </div>
       <div className="gar-grid">
         <div className="gar-copy reveal">
-          <p>On ne te donne pas juste des conseils. On <em>met le système en place pour toi</em> : stratégie, publicités, acquisition, message, tunnel et génération de prospects.</p>
-          <p>Et parce qu'on croit réellement en notre méthode, elle est accompagnée d'une <em>garantie de résultat certifiée par NHBoost.</em></p>
-          <p>L'objectif est simple : t'aider à générer des prospects qualifiés, signer plus de clients et viser les <em>50 000€/mois.</em></p>
+          <p className="gar-claim">Sinon, vous ne payez pas.</p>
+          <p>Découvrez le système <em>+50k</em> installé chez des dizaines d'agences pour attirer plus de prospects, signer plus de clients et dépasser les <em>50 000€/mois.</em></p>
         </div>
         <div className="gar-chips reveal">
           <div className="gar-chips-label">Ce qu'on installe pour toi</div>
