@@ -324,6 +324,8 @@ body::after{
 .video-cap{ position:absolute; left:0; right:0; bottom:20px; text-align:center; font-size:13px; color:var(--ink-soft); letter-spacing:.04em; }
 .video-fakechart{ position:absolute; inset:0; opacity:.35; }
 .hero-video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; background:#0a0a0d; }
+.video-fs{ position:absolute; bottom:14px; right:14px; z-index:3; width:38px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:8px; cursor:pointer; color:var(--ink); background:rgba(8,8,10,.55); border:1px solid var(--hair); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); transition:background .2s, border-color .2s, color .2s, transform .2s; }
+.video-fs:hover{ background:rgba(8,8,10,.8); border-color:var(--gold-2); color:var(--gold-1); transform:translateY(-1px); }
 .play.is-playing{ background:rgba(8,8,10,.55); box-shadow:0 0 0 1px var(--hair), inset 0 0 0 1px rgba(255,255,255,.08); backdrop-filter:blur(4px); }
 .play.is-playing::before{ display:none; }
 

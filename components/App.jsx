@@ -113,6 +113,17 @@ function Hero({ heroLine }) {
       setPlaying(false);
     }
   };
+  const goFullscreen = (e) => {
+    e.stopPropagation();
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = false;
+    v.play().catch(() => {});
+    setPlaying(true);
+    if (v.requestFullscreen) v.requestFullscreen();
+    else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen(); // iOS Safari
+    else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+  };
   return (
     <header className="hero wrap" id="top">
       <div className="hero-glow"></div>
@@ -134,6 +145,11 @@ function Hero({ heroLine }) {
         </div>
         }
         {!playing && <div className="video-cap">Cliquez pour lancer la vidéo</div>}
+        <button className="video-fs" onClick={goFullscreen} aria-label="Ouvrir en plein écran" title="Plein écran">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3" />
+          </svg>
+        </button>
       </div>
 
       <div className="hero-proof reveal">
