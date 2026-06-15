@@ -225,7 +225,7 @@ function Garantie() {
       <div className="gar-grid">
         <div className="gar-copy reveal">
           <p className="gar-claim">Sinon, vous ne payez pas.</p>
-          <p>Découvrez le système <em>+50k</em> installé chez des dizaines d'agences pour attirer plus de prospects, signer plus de clients et dépasser les <em>50 000€/mois.</em></p>
+          <p>Découvrez le système <span className="hl">+50k</span> installé chez des dizaines d'agences pour attirer plus de prospects, signer plus de clients et dépasser les <span className="hl">50 000€/mois</span>.</p>
         </div>
         <div className="gar-chips reveal">
           <div className="gar-chips-label">Ce qu'on installe pour toi</div>
