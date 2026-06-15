@@ -467,6 +467,7 @@ body::after{
 
 /* ============== COMPARE ============== */
 .compare{ display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:920px; margin:48px auto 0; }
+.compare.single{ grid-template-columns:minmax(0,560px); justify-content:center; }
 @media (max-width:760px){ .compare{ grid-template-columns:1fr; } }
 .cmp-card{ background:var(--bg-card); border:1px solid var(--hair); border-radius:10px; padding:30px 28px; }
 .cmp-card.is{ background:linear-gradient(180deg,rgba(63,119,190,.06),transparent); border-color:rgba(63,119,190,.28); }

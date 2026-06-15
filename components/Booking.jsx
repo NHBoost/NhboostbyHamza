@@ -214,7 +214,6 @@ export function Booking(){
         )}
       </div>
 
-      <div className="powered">POWERED BY <b>NHBoost × iClosed</b></div>
     </div>
   );
 }

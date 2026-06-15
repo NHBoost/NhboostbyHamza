@@ -260,19 +260,12 @@ function BookingSection() {
 /* ---------- Compare ---------- */
 function Compare() {
   const yes = ["Comprendre ta situation actuelle", "Identifier ce qui bloque ta croissance", "Voir si ton activité correspond au système", "T'expliquer comment on peut le mettre en place"];
-  const no = ["Une session de coaching gratuite", "Des conseils vagues et génériques", "Une vente déguisée"];
   return (
-    <div className="compare">
+    <div className="compare single">
       <div className="cmp-card is reveal">
         <h3>Un appel stratégique de 40 minutes</h3>
         <ul className="cmp-list">
           {yes.map((t, i) => <li key={i}><span className="cmp-ic yes">✓</span>{t}</li>)}
-        </ul>
-      </div>
-      <div className="cmp-card reveal">
-        <h3>Ce que ce n'est pas</h3>
-        <ul className="cmp-list">
-          {no.map((t, i) => <li key={i}><span className="cmp-ic no">✕</span>{t}</li>)}
         </ul>
       </div>
     </div>);
