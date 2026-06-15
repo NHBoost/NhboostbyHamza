@@ -129,10 +129,11 @@ function Hero({ heroLine }) {
       <div className="hero-glow"></div>
       <div className="hero-badge reveal" style={{ fontSize: "8px" }}><span className="pulse"></span>Coachs · Freelances · Agences</div>
       <h1 className="display reveal">
-        ENCORE BLOQUÉ ENTRE
-        <span className="line2 gold-text">{heroLine}</span>
+        0 RISQUE.
+        <span className="line2 gold-text">Les résultats sont garantis.</span>
       </h1>
-      <p className="lede reveal">Découvre comment notre système aide les coachs, freelances et agences à générer des prospects qualifiés tous les jours, signer plus de clients et dépasser la barre des 50 000€/mois.</p>
+      <p className="hero-claim reveal">Sinon, vous ne payez pas.</p>
+      <p className="lede reveal">Découvrez le système <span className="hl">+50k</span> installé chez des dizaines d'agences pour attirer plus de prospects, signer plus de clients et dépasser les <span className="hl">50 000€/mois</span>.</p>
 
       <div className="video-frame reveal" onClick={togglePlay}>
         <span className="corner tl"></span><span className="corner tr"></span>
@@ -220,12 +221,11 @@ function Garantie() {
     <section className="section garantie wrap" id="garantie">
       <div className="sec-head reveal">
         <span className="eyebrow" style={{ justifyContent: "center" }}>La garantie</span>
-        <h2 className="display">0 RISQUE. <span className="gold-text kicker-italic">Les résultats sont garantis.</span></h2>
+        <h2 className="display">ENCORE BLOQUÉ ENTRE <span className="gold-text kicker-italic">5K ET 20K€/MOIS ?</span></h2>
       </div>
       <div className="gar-grid">
         <div className="gar-copy reveal">
-          <p className="gar-claim">Sinon, vous ne payez pas.</p>
-          <p>Découvrez le système <span className="hl">+50k</span> installé chez des dizaines d'agences pour attirer plus de prospects, signer plus de clients et dépasser les <span className="hl">50 000€/mois</span>.</p>
+          <p>Découvre comment notre système aide les coachs, freelances et agences à générer des prospects qualifiés tous les jours, signer plus de clients et dépasser la barre des <span className="hl">50 000€/mois</span>.</p>
         </div>
         <div className="gar-chips reveal">
           <div className="gar-chips-label">Ce qu'on installe pour toi</div>
