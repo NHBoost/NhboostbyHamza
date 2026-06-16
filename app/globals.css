@@ -283,6 +283,7 @@ body::after{
 .hero h1{
   font-size:clamp(32px,8vw,50px);
   position:relative; z-index:1;
+  margin-bottom:clamp(16px,2.6vh,32px);
 }
 .hero h1 .line2{ display:block; margin-top:.06em; }
 .hero h1 .gold-text{ font-style:italic; }
