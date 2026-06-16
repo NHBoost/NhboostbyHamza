@@ -129,7 +129,7 @@ function Hero({ heroLine }) {
       <div className="hero-glow"></div>
       <div className="hero-badge reveal" style={{ fontSize: "8px" }}><span className="pulse"></span>Coachs · Freelances · Agences</div>
       <h1 className="display reveal">
-        0 RISQUE.
+        0 RISQUE.<br />
         <span className="line2 gold-text">Les résultats sont garantis.</span>
       </h1>
       <p className="hero-claim reveal">Sinon, vous ne payez pas.</p>

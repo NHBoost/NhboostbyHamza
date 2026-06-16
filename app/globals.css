@@ -285,7 +285,10 @@ body::after{
   position:relative; z-index:1;
   margin-bottom:clamp(16px,2.6vh,32px);
 }
-.hero h1 .line2{ display:block; margin-top:.06em; }
+/* inline-block + padding horizontal : empêche le background-clip:text de
+   rogner le jambage gauche des lettres italiques (ex. le "g" de garantis).
+   margins négatifs = compensation neutre pour la mise en page. */
+.hero h1 .line2{ display:inline-block; padding:0 .22em .08em; margin:.06em -.22em -.08em; }
 .hero h1 .gold-text{ font-style:italic; }
 .hero .lede{ color:var(--ink-soft); max-width:560px; margin:26px auto 0; font-size:clamp(15px,1.5vw,18px); position:relative; z-index:1; }
 
