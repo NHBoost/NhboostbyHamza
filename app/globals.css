@@ -87,6 +87,10 @@ body::after{
   background:var(--gold-sheen);
   -webkit-background-clip:text; background-clip:text;
   color:transparent;
+  /* évite que les lettres italiques (ex. le "g") soient rognées par
+     le background-clip:text — padding compensé par un margin négatif
+     (neutre pour la mise en page) */
+  padding-inline:.14em; margin-inline:-.14em;
 }
 
 .eyebrow{
