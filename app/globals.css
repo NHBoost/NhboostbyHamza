@@ -514,7 +514,7 @@ body::after{
 .tst-viewport{ overflow:hidden; }
 .tst-track{ display:flex; gap:20px; transition:transform .6s cubic-bezier(.2,.8,.2,1); }
 .tst-card{ flex:0 0 320px; max-width:320px; background:var(--bg-card); border:1px solid var(--hair); border-radius:10px; overflow:hidden; }
-@media (max-width:560px){ .tst-card{ flex-basis:80%; max-width:80%; } }
+@media (max-width:560px){ .tst-card{ flex-basis:100%; max-width:100%; } }
 .tst-media{ position:relative; aspect-ratio:4/3; background:linear-gradient(160deg,#17171c,#0a0a0d); overflow:hidden; cursor:pointer; }
 .tst-video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; background:#0a0a0d; }
 .tst-media .label{ position:absolute; bottom:12px; left:14px; font-style:italic; color:var(--ink-soft); font-size:14px; opacity:.7; }

@@ -17,6 +17,28 @@ export function Testimonials(){
   const clamp = (n) => Math.max(0, Math.min(maxIdx, n));
   const go = (n) => setIdx(clamp(n));
 
+  // Le pas de défilement = largeur réelle d'une carte + l'écart (gap).
+  // Mesuré dynamiquement pour rester aligné à tous les breakpoints
+  // (sinon décalage / espace vide quand on slide, surtout sur mobile).
+  const trackRef = React.useRef(null);
+  const [step, setStep] = React.useState(340);
+  React.useEffect(() => {
+    const measure = () => {
+      const track = trackRef.current;
+      if (!track) return;
+      const card = track.querySelector(".tst-card");
+      if (!card) return;
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      setStep(card.getBoundingClientRect().width + gap);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [perView]);
+
+  // recadre l'index si le nombre de vues change (ex. rotation mobile/desktop)
+  React.useEffect(() => { setIdx((n) => Math.max(0, Math.min(maxIdx, n))); }, [maxIdx]);
+
   return (
     <div className="wrap">
       <div className="tst-head reveal">
@@ -32,7 +54,7 @@ export function Testimonials(){
       </div>
 
       <div className="tst-viewport reveal">
-        <div className="tst-track" style={{ transform:`translateX(calc(-${idx} * (320px + 20px)))` }}>
+        <div className="tst-track" ref={trackRef} style={{ transform:`translateX(${-idx * step}px)` }}>
           {TST.map((t,i)=>(
             <TstCard t={t} key={i} />
           ))}
