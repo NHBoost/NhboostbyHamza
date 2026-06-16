@@ -201,7 +201,7 @@ function Bio() {
           <span className="eyebrow">Qui est Hamza</span>
           <h2 className="display">L'HOMME DERRIÈRE <span className="gold-text kicker-italic">NHBoost.</span></h2>
           <div className="role">Fondateur · Opérateur · Expert en Acquisition</div>
-          <p>Chaque jour, des milliers d'entreprises investissent dans la publicité, publient du contenu et tentent de développer leur activité sans jamais parvenir à obtenir un flux régulier de clients.</p>
+          <p className="lead">Chaque jour, des milliers d'entreprises investissent dans la publicité, publient du contenu et tentent de développer leur activité sans jamais parvenir à obtenir un flux régulier de clients.</p>
           <p>La différence entre une entreprise qui stagne et une entreprise qui se développe rapidement ne se trouve généralement ni dans son produit ni dans son service. La différence se trouve dans son <em>système d'acquisition</em>.</p>
           <p>C'est cette maîtrise de l'acquisition qui permet aujourd'hui à Hamza de <em>garantir contractuellement des résultats</em> aux entreprises qu'il accompagne, là où la plupart des agences se contentent de promesses.</p>
           <p>Au fil des années, Hamza a construit plusieurs entreprises dans des secteurs différents. <em>Prestigia</em> accompagne les entrepreneurs à travers ses business centers et sa fiduciaire. <em>BHS</em> a permis à des centaines de consultants d'intégrer des entreprises et de contribuer à leur croissance. <em>Primecast</em> aide dirigeants et marques à développer leur visibilité grâce au personal branding, à la vidéo et au podcast.</p>
