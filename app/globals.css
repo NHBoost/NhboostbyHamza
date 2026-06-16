@@ -657,3 +657,61 @@ body::after{
   .nav-toggle{ width:32px; height:32px; }
   .brand.nav-brand .brand-logo{ height:22px; }
 }
+
+/* =========================================================
+   DESIGN ENHANCEMENTS — finitions visuelles (contenu inchangé)
+   ========================================================= */
+
+/* — Eyebrow en pastille (cohérent avec le badge du hero) — */
+.eyebrow{
+  letter-spacing:.24em;
+  color:var(--gold-1);
+  gap:9px;
+  padding:7px 15px;
+  border-radius:100px;
+  border:1px solid var(--hair);
+  background:linear-gradient(180deg, rgba(63,119,190,.13), rgba(63,119,190,.03));
+  -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+}
+.eyebrow::before{
+  content:""; width:6px; height:6px; border-radius:50%;
+  background:var(--gold-1); box-shadow:0 0 9px var(--gold-2);
+}
+
+/* — Halo doux derrière les titres de section — */
+.sec-head{ position:relative; }
+.sec-head::before{
+  content:""; position:absolute; left:50%; top:38%; transform:translate(-50%,-50%);
+  width:min(620px,86%); height:260px; z-index:0; pointer-events:none;
+  background:radial-gradient(ellipse at center, rgba(63,119,190,calc(.13*var(--glow))), transparent 70%);
+}
+.sec-head > *{ position:relative; z-index:1; }
+
+/* — Liseré lumineux en haut des cartes (effet premium) — */
+.cmp-card, .tst-card{ position:relative; }
+.cmp-card::after, .tst-card::after{
+  content:""; position:absolute; top:0; left:14px; right:14px; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(150,175,255,.55), transparent);
+}
+
+/* — Micro-interactions au survol — */
+.cmp-card, .tst-card{ transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .35s; }
+.cmp-card:hover, .tst-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(63,119,190,.45);
+  box-shadow:0 26px 60px rgba(0,0,0,.55), 0 0 42px rgba(63,119,190,calc(.1*var(--glow)));
+}
+.gar-chip{ transition:transform .25s, border-color .25s, background .25s; }
+.gar-chip:hover{ transform:translateX(5px); border-color:rgba(63,119,190,.4); background:#0e0f15; }
+.bio-photo{ transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s; }
+.bio-photo:hover{ transform:translateY(-5px); box-shadow:0 42px 110px rgba(0,0,0,.6), 0 0 52px rgba(63,119,190,calc(.12*var(--glow))); }
+
+/* — Conteneur des chips Garantie : profondeur + bord accentué — */
+.gar-chips{ box-shadow:0 0 0 1px rgba(63,119,190,.07), 0 22px 50px rgba(0,0,0,.32); }
+
+/* — Chiffres clés (Bio) : soulignement dégradé sous le nombre — */
+.bio-stats > div{ position:relative; padding-top:14px; }
+.bio-stats > div::before{
+  content:""; position:absolute; top:0; left:0; width:28px; height:3px; border-radius:3px;
+  background:var(--gold-grad);
+}
