@@ -191,34 +191,50 @@ function Hero({ heroLine }) {
 function Bio() {
   return (
     <section className="section bio wrap" id="hamza">
-      <div className="bio-grid">
+      <div className="bio-head reveal">
+        <span className="eyebrow">Qui est Hamza</span>
+        <h2 className="display">L'HOMME DERRIÈRE <span className="gold-text kicker-italic">NHBoost.</span></h2>
+        <div className="role">Fondateur · Opérateur · Expert en Acquisition</div>
+      </div>
+
+      <div className="bio-feature">
         <div className="bio-photo reveal">
           <img className="bio-img" src="/assets/hamza.png" alt="Hamza, fondateur de NHBoost" />
           <span className="ph-tag">Hamza · Fondateur</span>
           <div className="frame-edge"></div>
         </div>
-        <div className="reveal">
-          <span className="eyebrow">Qui est Hamza</span>
-          <h2 className="display">L'HOMME DERRIÈRE <span className="gold-text kicker-italic">NHBoost.</span></h2>
-          <div className="role">Fondateur · Opérateur · Expert en Acquisition</div>
+        <div className="bio-lead reveal">
           <p className="lead">Chaque jour, des milliers d'entreprises investissent dans la publicité, publient du contenu et tentent de développer leur activité sans jamais parvenir à obtenir un flux régulier de clients.</p>
           <p>La différence entre une entreprise qui stagne et une entreprise qui se développe rapidement ne se trouve généralement ni dans son produit ni dans son service. La différence se trouve dans son <em>système d'acquisition</em>.</p>
           <p>C'est cette maîtrise de l'acquisition qui permet aujourd'hui à Hamza de <em>garantir contractuellement des résultats</em> aux entreprises qu'il accompagne, là où la plupart des agences se contentent de promesses.</p>
-          <p>Au fil des années, Hamza a construit plusieurs entreprises dans des secteurs différents. <em>Prestigia</em> accompagne les entrepreneurs à travers ses business centers et sa fiduciaire. <em>BHS</em> a permis à des centaines de consultants d'intégrer des entreprises et de contribuer à leur croissance. <em>Primecast</em> aide dirigeants et marques à développer leur visibilité grâce au personal branding, à la vidéo et au podcast.</p>
-          <p>Derrière chacune de ces sociétés se trouve le même moteur : des systèmes d'acquisition performants capables de générer des opportunités commerciales de manière prévisible et répétable.</p>
-          <p>À travers <em>NHBoost</em>, Hamza a développé un réseau d'agences et de franchises qui appliquent ces mêmes méthodes de croissance. Grâce à ces systèmes éprouvés, de nombreuses structures accompagnées dépassent aujourd'hui les <em>50 000€ de chiffre d'affaires mensuel</em>, avec un flux constant de prospects qualifiés et de nouveaux clients.</p>
-          <p>Son expertise ne repose pas sur la théorie, mais sur des systèmes utilisés chaque jour dans ses propres entreprises. Cette expérience lui permet d'identifier rapidement les leviers de croissance d'une société et de mettre en place les mécanismes nécessaires pour attirer davantage de prospects, signer plus de clients et accélérer durablement leur développement.</p>
-          <p>Parce qu'au final, la seule différence entre une entreprise qui peine à se développer et une entreprise qui grandit rapidement est souvent l'accès au bon système et aux bonnes personnes pour l'implémenter. Et c'est précisément la mission d'Hamza à travers NHBoost.</p>
-          <div className="bio-stats">
-            <div><div className="n"><span className="gold-text">14</span> ans</div><div className="l">quand il a commencé</div></div>
-            <div><div className="n"><span className="gold-text">4</span></div><div className="l">sociétés dans son écosystème</div></div>
-            <div><div className="n"><span className="gold-text">100+</span></div><div className="l">consultants placés via BHS</div></div>
-            <div><div className="n"><span className="gold-text">1M€</span></div><div className="l">générés avec ce système</div></div>
-          </div>
-          <div className="bio-cta reveal">
-            <a href="#reserver" className="btn">Réserver un appel <span className="arw">→</span></a>
-          </div>
         </div>
+      </div>
+
+      <div className="bio-eco reveal">
+        <div className="bio-eco-label">L'écosystème de Hamza</div>
+        <div className="bio-eco-grid">
+          <div className="eco-card"><div className="eco-name">Prestigia</div><p>Business centers &amp; fiduciaire — accompagne les entrepreneurs.</p></div>
+          <div className="eco-card"><div className="eco-name">BHS</div><p>+100 consultants intégrés en entreprise pour soutenir leur croissance.</p></div>
+          <div className="eco-card"><div className="eco-name">Primecast</div><p>Studio personal branding, vidéo &amp; podcast pour dirigeants et marques.</p></div>
+        </div>
+      </div>
+
+      <div className="bio-body reveal">
+        <p>Au fil des années, Hamza a construit plusieurs entreprises dans des secteurs différents. Derrière chacune se trouve le même moteur : des <em>systèmes d'acquisition</em> performants, capables de générer des opportunités commerciales de manière prévisible et répétable.</p>
+        <p>À travers <em>NHBoost</em>, Hamza a développé un réseau d'agences et de franchises qui appliquent ces mêmes méthodes de croissance. Grâce à ces systèmes éprouvés, de nombreuses structures accompagnées dépassent aujourd'hui les <em>50 000€ de chiffre d'affaires mensuel</em>, avec un flux constant de prospects qualifiés et de nouveaux clients.</p>
+        <p>Son expertise ne repose pas sur la théorie, mais sur des systèmes utilisés chaque jour dans ses propres entreprises. Cette expérience lui permet d'identifier rapidement les leviers de croissance d'une société et de mettre en place les mécanismes nécessaires pour attirer davantage de prospects, signer plus de clients et accélérer durablement leur développement.</p>
+        <p>Parce qu'au final, la seule différence entre une entreprise qui peine à se développer et une entreprise qui grandit rapidement est souvent l'accès au bon système et aux bonnes personnes pour l'implémenter. Et c'est précisément la mission d'Hamza à travers <em>NHBoost</em>.</p>
+      </div>
+
+      <div className="bio-stats reveal">
+        <div><div className="n"><span className="gold-text">14</span> ans</div><div className="l">quand il a commencé</div></div>
+        <div><div className="n"><span className="gold-text">4</span></div><div className="l">sociétés dans son écosystème</div></div>
+        <div><div className="n"><span className="gold-text">100+</span></div><div className="l">consultants placés via BHS</div></div>
+        <div><div className="n"><span className="gold-text">1M€</span></div><div className="l">générés avec ce système</div></div>
+      </div>
+
+      <div className="bio-cta reveal">
+        <a href="#reserver" className="btn">Réserver un appel <span className="arw">→</span></a>
       </div>
     </section>);
 
