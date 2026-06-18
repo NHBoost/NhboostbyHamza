@@ -811,7 +811,6 @@ body::after{
   display:grid; grid-template-columns:.82fr 1.18fr; gap:clamp(28px,4vw,56px);
   align-items:center; max-width:1040px; margin:0 auto clamp(40px,6vh,68px);
 }
-.bio-feature .bio-photo{ position:static; }
 .bio-lead p{ max-width:none; margin:0 0 16px; text-align:left; }
 .bio-lead p:last-child{ margin-bottom:0; }
 
