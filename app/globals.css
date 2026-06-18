@@ -839,3 +839,26 @@ body::after{
   .bio-feature{ grid-template-columns:1fr; gap:24px; }
   .bio-eco-grid{ grid-template-columns:1fr; }
 }
+
+/* — Bouton WhatsApp (vert) — */
+.btn-wa{
+  background:#25D366; color:#fff;
+  box-shadow:0 14px 40px rgba(37,211,102,calc(.3*var(--glow))), inset 0 1px 0 rgba(255,255,255,.4);
+}
+.btn-wa:hover{
+  background:#20bd5a;
+  box-shadow:0 20px 60px rgba(37,211,102,calc(.45*var(--glow))), inset 0 1px 0 rgba(255,255,255,.5);
+}
+
+/* — Hero mobile : vidéo AVANT les boutons — */
+@media (max-width:900px){
+  .hero-grid{ display:flex; flex-direction:column; align-items:center; }
+  .hero-col-text, .hero-col-media{ display:contents; }
+  .hero-badge{ order:1; }
+  .hero h1{ order:2; align-self:stretch; }
+  .hero-claim{ order:3; align-self:stretch; }
+  .hero .lede{ order:4; align-self:stretch; }
+  .hero .video-frame{ order:5; align-self:stretch; }
+  .hero .cta-row{ order:6; align-self:stretch; }
+  .hero-prompt{ order:7; align-self:stretch; }
+}
