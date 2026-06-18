@@ -129,7 +129,7 @@ function Hero({ heroLine }) {
       <div className="hero-glow"></div>
       <div className="hero-grid">
         <div className="hero-col-text">
-          <div className="hero-badge reveal"><span className="pulse"></span>Coachs · Freelances · Agences</div>
+          <div className="hero-badge reveal"><span className="pulse"></span><span className="hb-tags">Coachs<i></i>Freelances<i></i>Agences</span></div>
           <h1 className="display reveal">
             0 RISQUE.<br />
             <span className="line2 gold-text">Les résultats sont garantis.</span>

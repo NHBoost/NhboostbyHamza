@@ -754,6 +754,34 @@ body::after{
 .hero-badge{ font-size:11px; }
 
 /* =========================================================
+   SOUS-TITRES / BADGES — pastilles glassy à bord dégradé
+   ========================================================= */
+.hero-badge, .eyebrow{
+  border:1px solid transparent;
+  border-radius:100px;
+  background:
+    linear-gradient(180deg, rgba(18,22,34,.72), rgba(10,12,20,.72)) padding-box,
+    linear-gradient(120deg, rgba(126,168,220,.55), rgba(63,119,190,.12) 45%, rgba(126,168,220,.45)) border-box;
+  -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08), 0 10px 26px rgba(0,0,0,.3);
+}
+.hero-badge{ color:var(--ink); padding:9px 18px; letter-spacing:.18em; }
+.eyebrow{ color:var(--gold-1); padding:8px 16px; }
+
+/* point lumineux (badge + eyebrow) affiné */
+.hero-badge .pulse,
+.eyebrow::before{
+  background:var(--gold-1);
+  box-shadow:0 0 10px var(--gold-2), 0 0 0 3px rgba(63,119,190,.18);
+}
+
+/* séparateurs en petits points accent dans le badge hero */
+.hb-tags i{
+  display:inline-block; width:3px; height:3px; border-radius:50%;
+  background:var(--gold-1); margin:0 9px; vertical-align:middle; opacity:.85;
+}
+
+/* =========================================================
    BIO — « Qui est Hamza » : photo sticky, intro mise en avant,
    chiffres regroupés en encart
    ========================================================= */
