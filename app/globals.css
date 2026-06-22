@@ -842,13 +842,23 @@ body::after{
 
 /* — Embed Calendly — */
 .calendly-embed{
-  max-width:1000px; margin:0 auto;
-  border:1px solid var(--hair); border-radius:16px; overflow:hidden;
+  max-width:1040px; margin:0 auto;
+  border:1px solid var(--hair); border-radius:18px; overflow:hidden;
   background:#0a0a0d;
-  box-shadow:0 40px 110px rgba(0,0,0,.55), 0 0 80px rgba(63,119,190,calc(.08*var(--glow)));
+  box-shadow:0 40px 110px rgba(0,0,0,.55), 0 0 80px rgba(63,119,190,calc(.08*var(--glow))),
+             inset 0 1px 0 rgba(255,255,255,.05);
 }
-.calendly-inline-widget{ min-width:320px; height:740px; }
-@media (max-width:680px){ .calendly-inline-widget{ height:1020px; } }
+/* liseré premium en haut du cadre */
+.calendly-embed{ position:relative; }
+.calendly-embed::after{
+  content:""; position:absolute; top:0; left:18px; right:18px; height:1px; z-index:2;
+  background:linear-gradient(90deg, transparent, rgba(150,175,255,.55), transparent);
+}
+/* hauteurs adaptées : 2 colonnes sur desktop (plus court), empilé sur mobile (plus haut) */
+.calendly-inline-widget{ width:100%; min-width:0; height:700px; }
+@media (max-width:900px){ .calendly-inline-widget{ height:860px; } }
+@media (max-width:680px){ .calendly-inline-widget{ height:1000px; } }
+@media (max-width:420px){ .calendly-inline-widget{ height:1090px; } }
 
 /* — Bouton WhatsApp (vert) — */
 .btn-wa{
