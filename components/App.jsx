@@ -2,8 +2,13 @@
 // App.jsx — composition de la landing ULTRA (Or & Noir)
 
 import React from "react";
-import { Booking } from "./Booking";
+import { CalendlyInline } from "./Calendly";
 import { Testimonials } from "./Testimonials";
+
+// Lien Calendly de l'appel stratégique (surchargé par NEXT_PUBLIC_CALENDLY_URL)
+const CALENDLY_URL =
+  process.env.NEXT_PUBLIC_CALENDLY_URL ||
+  "https://calendly.com/nhboostpro/appel-strategique-nhboost";
 import {
   useTweaks,
   TweaksPanel,
@@ -276,7 +281,7 @@ function BookingSection() {
           <span className="eyebrow">L'appel stratégique</span>
           <h2 className="display">UN APPEL DE <span className="gold-text kicker-italic">40 MINUTES.</span></h2>
         </div>
-        <Booking />
+        <CalendlyInline url={CALENDLY_URL} />
         <Compare />
       </div>
     </section>);

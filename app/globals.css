@@ -840,6 +840,16 @@ body::after{
   .bio-eco-grid{ grid-template-columns:1fr; }
 }
 
+/* — Embed Calendly — */
+.calendly-embed{
+  max-width:1000px; margin:0 auto;
+  border:1px solid var(--hair); border-radius:16px; overflow:hidden;
+  background:#0a0a0d;
+  box-shadow:0 40px 110px rgba(0,0,0,.55), 0 0 80px rgba(63,119,190,calc(.08*var(--glow)));
+}
+.calendly-inline-widget{ min-width:320px; height:740px; }
+@media (max-width:680px){ .calendly-inline-widget{ height:1020px; } }
+
 /* — Bouton WhatsApp (vert) — */
 .btn-wa{
   background:#25D366; color:#fff;
