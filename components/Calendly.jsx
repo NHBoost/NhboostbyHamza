@@ -4,9 +4,11 @@
 
 import React from "react";
 
-// Paramètres de thème Calendly (couleurs de la charte)
+// Thème Calendly clair : fond blanc + texte foncé (les champs de saisie
+// restent lisibles, contrairement au thème sombre où le texte tapé l'était
+// mal). Accent bleu de la charte. Le cadre sombre du site l'encadre.
 const THEME =
-  "hide_gdpr_banner=1&background_color=0a0a0d&text_color=eef1f8&primary_color=3f77be";
+  "hide_gdpr_banner=1&background_color=ffffff&text_color=1a1f2e&primary_color=3f77be";
 
 export function CalendlyInline({ url }) {
   React.useEffect(() => {
